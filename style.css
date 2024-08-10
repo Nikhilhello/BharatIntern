@@ -1,0 +1,283 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    background: url("tv.png") no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center; /* Center horizontally */
+}
+
+/* Top Section */
+.topSide {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: relative; /* Ensure it stays in place */
+    width: 100%;
+    padding: 20px 0; /* Adjust padding to fit the text */
+    box-sizing: border-box;
+}
+
+/* Header Content Container */
+.header-content {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Space between logo and text */
+    padding: 0 20px; /* Adjust horizontal padding */
+    box-sizing: border-box;
+}
+
+/* Netflix Logo */
+.img-netflixIcon {
+    height: 90px;
+}
+
+/* Header Text */
+.header-text {
+    color: white;
+    max-width: 600px; /* Limit text width */
+    margin-left: 20px; /* Space between logo and text */
+    text-align: right; /* Align text to the right */
+}
+
+/* Main Text */
+.main-text {
+    font-family: 'Arial Black', Gadget, sans-serif; /* Different font for the main text */
+    font-size: 2rem; /* Increased font size */
+    line-height: 1.2;
+    margin-bottom: 5px; /* Reduced space between lines */
+}
+
+/* Sub Text */
+.sub-text {
+    font-family: 'Verdana', Geneva, sans-serif; /* Different font for the sub text */
+    font-size: 1.2rem; /* Increased font size */
+    line-height: 1.5;
+}
+
+/* Image Carousel */
+.image-container {
+    position: relative;
+    width: 600px; /* Increased size for more images */
+    height: 600px; /* Increased size for more images */
+    transform-style: preserve-3d;
+    transform: perspective(1200px) rotateY(0deg); /* Adjust perspective for more images */
+    transition: transform 0.7s;
+    margin: 40px 0; /* Space from top and bottom */
+}
+
+/* Adjust spacing between images */
+.image-container span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Ensure it fits the container */
+    transform: rotateY(calc(var(--i) * 18deg)) translateZ(620px); /* Adjust translateZ for spacing */
+}
+
+/* Image Size and Positioning */
+.image-container span img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 180px; /* Adjust image size */
+    height: 300px; /* Adjust image size */
+    object-fit: cover;
+    transform: translate(-50%, -50%); /* Center the image in its span */
+}
+
+/* Buttons */
+.btn-container {
+    position: relative;
+    width: 100%; /* Full width for better centering */
+    text-align: center; /* Center buttons horizontally */
+    margin: 20px 0; /* Space above and below */
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    gap: 550px; /* Adjust the gap between buttons */
+}
+
+/* Buttons */
+.btn {
+    background-color: #ff0522;
+    color: white;
+    border: none;
+    padding: 11px 40px; /* Increased padding for larger button size */
+    font-size: 1.1rem; /* Increased font size */
+    border-radius: 8px; /* Slightly larger border radius */
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Lighting Animation */
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 20%, transparent 60%);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.6s, opacity 0.6s;
+    opacity: 0;
+    z-index: 0;
+}
+
+/* Button State */
+.btn:hover {
+    background-color: #1d2a3a; /* Darker shade for hover */
+}
+
+/* Lighting Effect on Hover */
+.btn:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+/* Ensure text is above the lighting effect */
+.btn span {
+    position: relative;
+    z-index: 1;
+}
+
+/* Footer */
+.footer {
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #757575;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+/* Footer Content */
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.footer-content > * {
+    margin-right: 20px;
+}
+
+/* Remove margin for the last element */
+.footer-content > *:last-child {
+    margin-right: 0;
+}
+
+.footer-content a {
+    color: #757575;
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+.select-language {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-size: 12px;
+    background-position-x: calc(100% - 7px);
+    background-position-y: calc(100% - 14px);
+    background-repeat: no-repeat;
+    background-color: #000;
+    color: #757575;
+    padding: 14px 20px 14px 14px;
+    font-size: 0.9rem;
+    min-height: 40px;
+    border: 1px solid #333;
+}
+
+/* Responsive Design */
+.footWidth {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footLay {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px 0 0 0;
+}
+
+.footLay li {
+    list-style: none;
+}
+
+.footList {
+    width: 25%;
+    margin-top: 10px;
+}
+
+.footLink {
+    text-decoration: none;
+    color: #757575;
+    font-size: 0.8rem;
+}
+
+.footLink:hover {
+    text-decoration: underline;
+}
+
+.select-language {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-size: 12px;
+    background-position-x: calc(100% - 7px);
+    background-position-y: calc(100% - 14px);
+    background-repeat: no-repeat;
+    background-color: #000;
+    color: #757575;
+    padding: 14px 20px 14px 14px;
+    margin: 30px 0 40px 0;
+    font-size: 0.9rem;
+    min-height: 40px;
+    border: 1px solid #333;
+}
+
+.select-language option {
+    padding-left: 10px;
+}
+
+@media screen and (max-width: 740px) {
+    body {
+        background: black;
+    }
+
+    .img-netflixIcon {
+        margin-left: 22px;
+    }
+
+    .topSide {
+        padding-bottom: 93px;
+    }
+
+    .footer {
+        border-top: 1px solid #737373;
+    }
+
+    .footList {
+        width: 33%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .footList {
+        width: 50%;
+    }
+}
