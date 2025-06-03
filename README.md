@@ -1,4 +1,7 @@
 # BharatIntern
+
+### This repository contains the work I completed during my internship
+
 Task-01-------Portfolio Website { profile.html and styles_p.css }
 
 Task-02-------Homepage of Netflix { For Netflix logo---netflix.html and 125.css  
